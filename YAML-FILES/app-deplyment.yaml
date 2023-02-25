@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python-deployment
+  name: python-deployment
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: python-deployment
+    spec:
+      containers:
+      - name: python-deployment
+        image: 95remon/gcp-simple-app:v1.0
+        ports:
+         - containerPort: 8000
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
