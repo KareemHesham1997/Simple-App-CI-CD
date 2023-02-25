@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: python-deployment
-        image: 95remon/gcp-simple-app:v1.0
+        image: karimhisham/gcp-simple-app:v1
         ports:
          - containerPort: 8000
       - name: redis
